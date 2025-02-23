@@ -1,0 +1,96 @@
+---
+const gameDescription = "Découvrez et explorez l’univers de Cat’Astrophe, un jeu où vous incarnez un adorable petit chat nommé Pixel, dont l’objectif est de semer le chaos dans la maison de ses tout nouveaux maîtres. Immergez-vous dans ce jeu comme si vous étiez à l’intérieur grâce à son gameplay en réalité virtuelle.";
+const catInfo = {
+  name: "Pixel",
+  image: "/images/da_cat_vibrant.png",
+  description: "Pixel est un chat espiègle et intrépide, toujours à la recherche de nouvelles bêtises à faire. Récemment adopté, il découvre son nouvel environnement avec curiosité et méfiance, détruisant tout ce qu’il trouve sur son passage. Mais sous cette image de petit farceur, c’est un animal très attachant qui raffole des friandises."
+};
+const humainInfo = {
+  name: "Glinda",
+  image: "/images/glind.png",
+  description: "Glinda est l’une des deux maîtresses de Pixel. C’est elle qui a décidé d’adopter un chat pour se sentir moins seule lorsque sa partenaire part en voyage d’affaires. Seulement, elle ne s’attendait pas à ce que cette petite créature demande autant d’attention... mais elle l’adore quand même."
+};
+---
+
+<section class="game-container" id="game">
+  <div class="game-description">
+    <h2>À propos du jeu</h2>
+    <p>{gameDescription}</p>
+  </div>
+
+  <div class="cat-presentation">
+    <img src={catInfo.image} alt={`Image de ${catInfo.name}`} />
+    <div class="cat-info">
+      <h3>{catInfo.name}</h3>
+      <p>{catInfo.description}</p>
+    </div>
+  </div>
+
+  <div class="cat-presentation humain-presentation">
+    <div class="cat-info humain-info">
+      <h3>{humainInfo.name}</h3>
+      <p>{humainInfo.description}</p>
+    </div>
+    <img src={humainInfo.image} alt={`Image de ${humainInfo.name}`} />
+  </div>
+</section>
+
+<style>
+  .game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 4rem;
+  }
+
+  .game-description {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .game-description h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-secondary);
+  }
+
+  .cat-presentation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #f9f9f9;
+    padding: 35px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    color: var(--color-secondary);
+  }
+
+  .humain-presentation{
+    margin-bottom: 4rem;
+  }
+
+  .cat-presentation img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .cat-info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .humain-info {
+    text-align: end;
+  }
+
+  @media (max-width: 600px) {
+    .cat-presentation, .humain-info {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
